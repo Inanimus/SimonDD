@@ -3,7 +3,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnStart = document.getElementById('btnStart')
-const LAST_LEVEL = 10;
+const LAST_LEVEL = 5;
 
 class Juego {
     constructor() {
@@ -18,7 +18,7 @@ class Juego {
         this.chooseColor = this.chooseColor.bind(this)
         this.togglebtnStart()
         this.level = 1;
-        this.colores = {celeste, violeta, naranja, verde}
+        this.colors = {celeste, violeta, naranja, verde}
     }
 
     togglebtnStart() {
@@ -74,25 +74,25 @@ class Juego {
     }
 
     turnOnColor(color) {
-        this.colores[color].classList.add('light')
+        this.colors[color].classList.add('light')
         setTimeout(() => this.turnOffColor(color), 350);
     }
 
     turnOffColor(color) {
-        this.colores[color].classList.remove('light');
+        this.colors[color].classList.remove('light');
     }
     addClickEvents() {
-        this.colores.celeste.addEventListener('click', this.chooseColor)
-        this.colores.violeta.addEventListener('click', this.chooseColor)
-        this.colores.naranja.addEventListener('click', this.chooseColor)
-        this.colores.verde.addEventListener('click', this.chooseColor)
+        this.colors.celeste.addEventListener('click', this.chooseColor)
+        this.colors.violeta.addEventListener('click', this.chooseColor)
+        this.colors.naranja.addEventListener('click', this.chooseColor)
+        this.colors.verde.addEventListener('click', this.chooseColor)
     }
 
     deleteClickEvents() {
-        this.colores.celeste.removeEventListener('click', this.chooseColor)
-        this.colores.violeta.removeEventListener('click', this.chooseColor)
-        this.colores.naranja.removeEventListener('click', this.chooseColor)
-        this.colores.verde.removeEventListener('click', this.chooseColor)
+        this.colors.celeste.removeEventListener('click', this.chooseColor)
+        this.colors.violeta.removeEventListener('click', this.chooseColor)
+        this.colors.naranja.removeEventListener('click', this.chooseColor)
+        this.colors.verde.removeEventListener('click', this.chooseColor)
     }
 
     chooseColor(ev) {
@@ -105,7 +105,7 @@ class Juego {
             this.subLevel++
 
             if (this.subLevel === this.level) {
-                
+
                 this.level++                
                 this.deleteClickEvents()
 
@@ -119,19 +119,15 @@ class Juego {
                 
                 }
 
-            } else {
-                
-                this.gameOver()
             }
+        } else {                
+            this.gameOver()
         }
     }
 
     gameWon() {
         swal('¡Muy bien!', '¡Felicidades, ganaste el juego!', 'success')
-            .then(() => {
-                this.deleteClickEvents()
-                this.Start()
-            })
+            .then(() => this.Start)
     }
 
     gameOver() {
