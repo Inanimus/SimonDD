@@ -3,21 +3,21 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnStart = document.getElementById('btnStart')
-const LAST_LEVEL = 10
+const LAST_LEVEL = 10;
 
 class Juego {
     constructor() {
         this.Start = this.Start.bind(this)
         this.Start()
         this.generateSequence()
-        setTimeout(this.nextLevel, 500)        
+        setTimeout(this.nextLevel, 1000)        
     }
 
     Start() {
         this.nextLevel = this.nextLevel.bind(this)
         this.chooseColor = this.chooseColor.bind(this)
         this.togglebtnStart()
-        this.level = 1
+        this.level = 1;
         this.colores = {celeste, violeta, naranja, verde}
     }
 
@@ -30,13 +30,13 @@ class Juego {
     }
 
     generateSequence() {
-        this.sequence = new Array(LAST_LEVEL).fill(0).map(n => Math.floor(Math.random() * 4))
+        this.sequence = new Array(LAST_LEVEL).fill(0).map(n => Math.floor(Math.random() * 4));
     }
 
     nextLevel() {
-        this.subLevel = 0
-        this.lightUpSequence()
-        this.addClickEvents()
+        this.subLevel = 0;
+        this.lightUpSequence();
+        this.addClickEvents();
     }
 
     transformNumToColor(num) {
@@ -67,18 +67,19 @@ class Juego {
 
     lightUpSequence() {
         for (let i = 0; i < this.level; i++) {
-            const color = this.transformNumToColor(this.sequence[i])
-            setTimeout(() => this.turnOnColor(color), 1000 * i)
+            let color = this.transformNumToColor(this.sequence[i]);
+
+            setTimeout(() => this.turnOnColor(color), 1000 * i);
         }
     }
 
     turnOnColor(color) {
         this.colores[color].classList.add('light')
-        setTimeout(() => this.turnOffColor(color), 350)
+        setTimeout(() => this.turnOffColor(color), 350);
     }
 
     turnOffColor(color) {
-        this.colores[color].classList.remove('light')
+        this.colores[color].classList.remove('light');
     }
     addClickEvents() {
         this.colores.celeste.addEventListener('click', this.chooseColor)
@@ -95,9 +96,9 @@ class Juego {
     }
 
     chooseColor(ev) {
-        const nameColor = ev.target.dataset.color
-        const numberColor = this.transformColorToNum(nameColor)
-        this.turnOnColor(nameColor)
+        const nameColor = ev.target.dataset.color;
+        const numberColor = this.transformColorToNum(nameColor);
+        this.turnOnColor(nameColor);
 
         if (numberColor === this.sequence[this.subLevel]) {
             
