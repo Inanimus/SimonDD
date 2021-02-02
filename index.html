@@ -4,16 +4,42 @@
     <meta charset='utf-8'>
     <title>Simon D&D</title>
     <link rel='stylesheet' href='./Css/Style.css'>
+    <link rel="stylesheet" href="./Css/CrystalSphere.css">
   </head>
   <body>
+    
     <div class='gameboard'>
-      <div id='celeste' class='color celeste left' data-color='celeste'></div>
-      <div id='violeta' class='color violeta right' data-color='violeta'></div>
-      <div id='naranja' class='color naranja left' data-color='naranja'></div>
-      <div id='verde' class='color verde right' data-color='verde'></div>
-      <button id='btnStart' class='btn-start' onclick='Start()'>Empezar a jugar</button>
+
+      <div class="center">
+        <section class="stage">
+          <figure class="ball">
+            <span class="shadow">
+              <div class="title">
+                <h1 id="level" class="level" >Level: 0</h1>
+                <h1 id="score" class="score" >Score: 0</h1>
+                <h1 id="top-score" class="top-score" >Top Score: 0</h1>
+              </div>
+            </span>
+          </figure>
+        </section>
+      </div>
+
+      <div id='blue' class='color blue left' data-color='blue'></div>
+      <div id='red' class='color red right' data-color='red'></div>
+
+      
+      
+      <div id='cyan' class='color cyan left' data-color='cyan'></div>
+      <div id='brown' class='color brown right' data-color='brown'></div>
+      <button id='btnStart' class='btn-start' onclick='Start()'>Play</button>
     </div>
+
+    <div id="source-code" class="source-code">
+      <p>Wanna know how it works? <a  href='https://github.com/Inanimus/SimonDD' target="_blank">see repository in Github</a></p>
+  </div>
+
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
     <script src='./js/Juego_Simon_Dice.js'></script>
+  
   </body>
 </html>

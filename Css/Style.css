@@ -1,14 +1,41 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
 body {
-    margin: 0;
     background: #dedede;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100vh;
   }
 
+  .title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .source-code{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .level , .score , .top-score{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3px;
+  }
+
   .gameboard {
-    height: 100vh;
-    width: 100vh;
+    height: 200vh;
+    width: 200vh;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
@@ -17,9 +44,11 @@ body {
   }
 
   .color {
+    cursor: pointer;
     width: 50%;
     height: 50%;
     display: inline-block;
+    transition: .5s;
   }
 
   .left {
@@ -30,39 +59,83 @@ body {
     float: left;
   }
 
-  .celeste {
-    background: #22a6b3;
+  .blue {
+    background: #2233b3;
   }
 
-  .celeste.light {
-    background: #7ed6df;
+  .blue.light {
+    background: #7e86df;
   }
 
-  .violeta {
-    background: #be2edd;
+  .red {
+    background: #dd2e2e;
   }
 
-  .violeta.light {
-    background: #e056fd;
+  .red.light {
+    background: #fc9595;
   }
 
-  .naranja {
-    background: #f0932b;
+  .cyan {
+    background: #00faea;
   }
 
-  .naranja.light {
-    background: #ffbe76;
+  .cyan.light {
+    background: #c6faf3;
   }
 
-  .verde {
-    background: #6ab04c;
+  .brown {
+    background: #846839;
   }
 
-  .verde.light {
-    background: #badc58;
+  .brown.light {
+    background: #c1834d;
+  }
+
+  @-webkit-keyframes fadeOut {
+    from {
+      opacity: 1;
+      display: block; 
+    }
+    to {
+      display: none;
+      opacity: 0; 
+    } 
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      display: block; 
+    }
+    to {
+      display: none;
+      opacity: 0; 
+    } 
+  }
+  @-webkit-keyframes fadeIn {
+    from {
+      display: none;
+      opacity: 0; 
+    }
+    to {
+      opacity: 1;
+      display: block; 
+    } 
+  }
+  @keyframes fadeIn {
+    from {
+      display: none;
+      opacity: 0; }
+    to {
+      opacity: 1;
+      display: block; 
+    } 
   }
 
   .btn-start {
+    transition: display 2s;
+    -webkit-transition: display 2s;
+    transition: visibility 1s;
+    -webkit-transition: visibility 1s;
     cursor: pointer;
     width: 420px;
     height: 100px;
@@ -78,6 +151,12 @@ body {
     transition: .5s;
     outline: none;
   }
+
+  .animation {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
 
   .hide {
     display: none;
