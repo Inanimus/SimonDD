@@ -1,7 +1,7 @@
 .center {
   background-color: whitesmoke;
-  top: 36%;
-  left: 40%;
+  top: calc(50% - 130px);
+  left: calc(50% - 130px);
   position: absolute;
   width: 50vh;
   height: 50vh;
@@ -9,6 +9,7 @@
   max-height: 30vh;
   max-width: 30vh;
 }
+
 .stage {
   perspective: 1200px;
   perspective-origin: 50% 50%;
