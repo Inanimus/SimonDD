@@ -12,6 +12,11 @@ body {
     height: 100vh;
   }
 
+  .dark-mode{
+    background: black;
+    color: whitesmoke;
+  }
+
   .title{
     width: 100%;
     display: flex;
