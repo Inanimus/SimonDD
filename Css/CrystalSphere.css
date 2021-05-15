@@ -1,7 +1,7 @@
 .center {
   background-color: whitesmoke;
-  top: calc(50% - 130px);
-  left: calc(50% - 130px);
+  top: calc(50% - 15vh);
+  left: calc(50% - 15vh);
   position: absolute;
   width: 50vh;
   height: 50vh;
@@ -28,7 +28,7 @@
   height: 100%;
   margin: 0;
   border-radius: 50%;
-  position: relative;
+  position: inherit;
   background: radial-gradient(
     circle at 50% 120%,
     #81e8f631,
