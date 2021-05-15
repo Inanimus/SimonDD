@@ -4,12 +4,7 @@
 }
 
 body {
-
     background: #dedede;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
   }
 
   .dark-mode{
@@ -37,6 +32,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 3px;
+  }
+
+  .main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
   }
 
   .gameboard {

@@ -7,33 +7,41 @@
     <link rel="stylesheet" href="./Css/CrystalSphere.css">
   </head>
   <body class="dark-mode">
+
+    <button onclick="DarkMode()">Toggle dark mode</button>
+
+    <section class="main-container">
     
-    <div class='gameboard'>
+      <section class='gameboard'>
 
-      <div class="center">
-        <section class="stage">
-          <figure class="ball">
-            <span class="shadow">
-              <div class="title">
-                <h1 id="level" class="level" >Level: 0</h1>
-                <h1 id="score" class="score" >Score: 0</h1>
-                <h1 id="top-score" class="top-score" >Top Score: 0</h1>
-              </div>
-            </span>
-          </figure>
-        </section>
-      </div>
+        <div class="center">
+          <section class="stage">
+            <figure class="ball">
+              <span class="shadow">
+                <div class="title">
+                  <h1 id="level" class="level" >Level: 0</h1>
+                  <h1 id="score" class="score" >Score: 0</h1>
+                  <h1 id="top-score" class="top-score" >Top Score: 0</h1>
+                </div>
+              </span>
+            </figure>
+          </section>
+        </div>
 
-      <div id='blue' class='color blue left' data-color='blue'></div>
-      <div id='red' class='color red right' data-color='red'></div>
+        <div id='blue' class='color blue left' data-color='blue'></div>
+        <div id='red' class='color red right' data-color='red'></div>
 
       
       
-      <div id='cyan' class='color cyan left' data-color='cyan'></div>
-      <div id='brown' class='color brown right' data-color='brown'></div>
-      <button id='btnStart' class='btn-start' onclick='Start()'>Play</button>
-    </div>
+        <div id='cyan' class='color cyan left' data-color='cyan'></div>
+        <div id='brown' class='color brown right' data-color='brown'></div>
 
+
+        <button id='btnStart' class='btn-start' onclick='Start()'>Play</button>
+      
+        </div>
+      </section>
+    </section>
     <div id="source-code" class="source-code">
       <p>Wanna know how it works? <a  href='https://github.com/Inanimus/SimonDD' target="_blank">see repository on Github</a></p>
   </div>
